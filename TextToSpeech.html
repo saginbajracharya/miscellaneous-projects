@@ -1,0 +1,14 @@
+<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'> 
+<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+<textarea id="tts" placeholder="Enter Text To Speech"></textarea><br>
+<input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
+
+<script type="text/javascript">
+	function textToSpeech() {
+		var val = document.getElementById('tts').value;
+		if(val!=" "){
+	    	responsiveVoice.speak(val);            
+		}	
+	}
+</script>
+<button onclick='textToSpeech()'><i class="fas fa-play-circle"></i>Play</button>
